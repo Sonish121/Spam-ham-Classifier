@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam/Ham Classifier</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .result { margin-top: 20px; }
+        table { border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 8px 12px; }
+    </style>
+</head>
+<body>
+    <h1>Spam/Ham Classifier</h1>
+    <form method="post">
+        <label for="message">Enter your message:</label><br>
+        <textarea name="message" id="message" rows="4" cols="60" required></textarea><br><br>
+        <input type="submit" value="Classify">
+    </form>
+    {% if result %}
+    <div class="result">
+        <h2>Results:</h2>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Prediction</th>
+                <th>Spam Probability</th>
+            </tr>
+            {% for r in result %}
+            <tr>
+                <td>{{ r.model }}</td>
+                <td>{{ r.prediction }}</td>
+                <td>{{ r.probability }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+</body>
+</html>
