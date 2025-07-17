@@ -103,5 +103,10 @@ F1-score: 0.8764
 5. **Save** models and vectorizer
 6. **Predict** new messages via CLI or web interface
 
+## Deployment (Host Online on Render)
+
+This project is hosted online using [Render](https://spam-ham-classifier-chmg.onrender.com/). 
+
+
 ## License
 This project is for educational purposes. 
